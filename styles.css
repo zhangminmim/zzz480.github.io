@@ -1,0 +1,167 @@
+/* 全局样式 */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #FFDD93, #FFE29F); /* 明亮的黄色渐变背景 */
+    color: #333; /* 使用深灰色文字 */
+    line-height: 1.6;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: rgba(255, 204, 102, 0.9); /* 浅橙色半透明背景 */
+    color: #333; /* 深灰色文字 */
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #333; /* 深灰色文字 */
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(255, 179, 71, 0.5); /* 悬停时的浅橙色背景 */
+}
+
+/* 主页部分 */
+.hero-section {
+    padding: 120px 20px;
+    text-align: center;
+    background: rgba(255, 239, 193, 0.8); /* 柔和的黄色背景 */
+    animation: slideIn 1.5s ease-in-out forwards;
+}
+
+/* 各部分的基本样式 */
+section {
+    padding: 40px;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 224, 0.8); /* 浅黄色背景 */
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* 当section进入视口时添加的动画效果 */
+section.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 技能部分的网格布局 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: rgba(255, 229, 204, 0.9); /* 柔和的橙色背景 */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+/* 项目部分悬停效果 */
+.project {
+    background-color: rgba(255, 229, 204, 0.9); /* 柔和的橙色背景 */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* 联系方式链接悬停效果 */
+#contact a {
+    color: #FF8C00; /* 橙色链接 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #FF4500; /* 深橙色悬停效果 */
+    text-decoration: underline;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 204, 102, 0.9); /* 浅橙色背景 */
+    color: #333; /* 深灰色文字 */
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeIn 2s 1s forwards;
+}
+
+/* 渐入动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 滑入动画效果 */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* 媒体查询: 适配移动设备 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-section {
+        padding: 80px 20px;
+    }
+}
